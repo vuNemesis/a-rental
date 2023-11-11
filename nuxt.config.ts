@@ -4,4 +4,8 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
+  modules: ["nuxt-quasar-ui"],
+  quasar: {
+    /* */
+  },
 });
