@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.8",
+    "bp-api": "^0.6.2",
     "quasar": "^2.13.1"
   }
 }
