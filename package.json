@@ -12,7 +12,13 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "nuxt": "^3.8.1",
+    "nuxt-quasar-ui": "^2.0.6",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.8",
+    "bp-api": "^0.6.2",
+    "quasar": "^2.13.1"
   }
 }
