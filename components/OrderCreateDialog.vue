@@ -22,6 +22,7 @@
             label="Комментарий"
             lazy-rules
             type="textarea"
+            autofocus
             :rules="[(val) => (val && val.length > 0) || 'Введите комментарий']"
           />
 
