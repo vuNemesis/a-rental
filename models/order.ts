@@ -19,13 +19,15 @@ const getStatus = (id: number): OrderStatus => {
 export const BpOrderToOrder = (order: {
   id: number | string;
   values: IOrderValues;
-}) => ({
+}): Order => ({
   id: +order.id,
   status: getStatus(+order.values["2"][0]),
   comment: order.values["3"],
 });
 
-export const OrderToBpOrderValues = (order: Order | OrderWithoutId) => ({
-  2: [order.status.id],
+export const OrderToBpOrderValues = (
+  order: Order | OrderWithoutId
+): IOrderValues => ({
+  2: [`${order.status.id}`],
   3: order.comment,
 });
