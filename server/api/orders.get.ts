@@ -1,15 +1,16 @@
 import type { IBpRecord } from "bp-api";
-import type { IOrder } from "~/types/bp";
+import type { IOrderValues } from "~/types/bp";
 import { ORDER_CATALOG_ID } from "~/constants/bp";
+import { BpOrderToOrder } from "~/models/order";
 
 export default defineEventHandler(async ({ context }) => {
   try {
-    const records: IBpRecord<IOrder>[] = await context.$bp.getAllRecords(
+    const orders: IBpRecord<IOrderValues>[] = await context.$bp.getAllRecords(
       ORDER_CATALOG_ID
     );
 
     return {
-      records,
+      orders: orders.map(BpOrderToOrder),
     };
   } catch (e: Error | any) {
     throw createError({

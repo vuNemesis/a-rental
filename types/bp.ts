@@ -5,14 +5,14 @@ import type {
   IBpValueObject,
 } from "bp-api";
 
-export interface IOrder extends IBpValues {
+export interface IOrderValues extends IBpValues {
   2: BpValueDropdown;
   3: BpValueText;
 }
 
 type CatalogAndRecord = Pick<IBpValueObject, "catalogId" | "recordId">;
 
-export interface IStore extends IBpValues {
+export interface IStoreValues extends IBpValues {
   3: [CatalogAndRecord];
   4: BpValueText;
 }
