@@ -37,6 +37,7 @@ const API_ORDERS_URL = "/api/orders";
 
 const ORDERS_LOAD_ERROR =
   "Не удалось получить Заказы. Пожалуйста, попробуйте позднее!";
+
 const {
   data,
   refresh: reloadOrders,
@@ -44,7 +45,9 @@ const {
   error: ordersError,
 } = await useFetch<{ orders: Order[] }>(API_ORDERS_URL);
 
-const orders = computed<Order[]>(() => data.value?.orders || []);
+const orders = computed<Order[]>(
+  () => data.value?.orders.sort((a, b) => b.id - a.id) || []
+);
 
 const orderCreateDialogShown = ref(false);
 
