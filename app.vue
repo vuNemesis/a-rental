@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <OrderList />
-  </div>
+  <NuxtPage />
 </template>

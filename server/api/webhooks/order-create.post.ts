@@ -1,5 +1,4 @@
-import type { IStore } from "~/types/bp";
-
+import type { IStoreValues } from "~/types/bp";
 import { STORE_CATALOG_ID } from "~/constants/bp";
 
 export default defineEventHandler(async (event) => {
@@ -8,7 +7,7 @@ export default defineEventHandler(async (event) => {
       payload: { catalogId, recordId, values },
     } = await readBody(event);
 
-    const data: IStore = {
+    const data: IStoreValues = {
       3: [{ catalogId, recordId }],
       4: values["3"],
     };

@@ -1,4 +1,4 @@
-import type { IOrder, ITestValue } from "~/types/bp";
+import type { IOrderValues, ITestValue } from "~/types/bp";
 import { TEST_REQUEST_URL } from "~/constants/bp";
 
 export default defineEventHandler(async (event) => {
@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
 
     const { value } = await $fetch<ITestValue>(TEST_REQUEST_URL);
 
-    const data: Partial<IOrder> = {
+    const data: Partial<IOrderValues> = {
       3: value,
     };
 
